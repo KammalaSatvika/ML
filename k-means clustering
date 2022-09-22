@@ -1,0 +1,17 @@
+import numpy, pandas, matplotlib 
+import sklearn 
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+df = pd.read_csv('file:///home/cse/Downloads/21.csv')
+df.head(5)
+x= df.iloc[:, [0,1]].values
+kmeans3 = KMeans(n_clusters=3)
+y_kmeans3 = kmeans3.fit_predict(x)
+print(y_kmeans3)
+plt.scatter(x[:, 0], x[:, 1], c=y_kmeans3, s=50, cmap='viridis')
+centers = kmeans3.cluster_centers_
+
+output:
+
